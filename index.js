@@ -9,7 +9,7 @@ require('./db/mongoose');
 
 app.use(express.json());
 
-const allowedOrigins = ['https://neuraevents.es', 'https://www.neuraevents.es'];
+const allowedOrigins = ['https://neuraevents.es', 'https://www.neuraevents.es', 'https://neuraevents.netlify.app'];
 
 app.use(cors({
     origin: function (origin, callback) {
