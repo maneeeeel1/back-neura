@@ -10,7 +10,7 @@ require('./db/mongoose');
 app.use(express.json());
 
 app.use(cors({
-    origin: 'https://neuraevents.es',
+    origin: 'https://www.neuraevents.es',
     credentials: true
 }));
 
