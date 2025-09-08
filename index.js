@@ -9,7 +9,10 @@ require('./db/mongoose');
 
 app.use(express.json());
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://neuraevents.es',
+    credentials: true
+}));
 
 app.use('/api/solicitudes', require('./routes/solicitudes'));
 
