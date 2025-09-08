@@ -9,8 +9,16 @@ require('./db/mongoose');
 
 app.use(express.json());
 
+const allowedOrigins = ['https://neuraevents.es', 'https://www.neuraevents.es'];
+
 app.use(cors({
-    origin: 'https://www.neuraevents.es',
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     credentials: true
 }));
 
